@@ -40,3 +40,7 @@ class TestReadFromFile(unittest.TestCase):
     def test_read_from_file_pandas_nonexistent(self):
         with self.assertRaises(FileNotFoundError):
             read_from_file_pandas('nonexistent_file_2.txt')
+
+
+if __name__ == '__main__':
+    unittest.main()
