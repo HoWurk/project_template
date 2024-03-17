@@ -28,4 +28,10 @@ def read_from_file_pandas(file_path):
     :return: text read from file
     """
     # .columns[0] to get text directly from all the info pandas gives
-    return pd.read_csv(file_path).columns[0]
+    try:
+        df = pd.read_csv(file_path).columns[0]
+        return df
+    except pd.errors.EmptyDataError:
+        return None
+    # return pd.read_csv(file_path).columns[0]
+    # return pd.read_csv(file_path)
